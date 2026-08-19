@@ -60,3 +60,20 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+debug-configmap.yaml
+*/}}
+{{- define "mychart.debugConfigMapName" -}}
+{{ include "mychart.fullname" . }}-debug
+{{- end }}
+
+{{/*
+General enviroment for all containers
+*/}}
+{{- define "mychart.commonEnv" -}}
+-name: RELEASE_NAME
+value:{{ .Release.Nmae | quote }}
+-name: CHART_VERSION
+value: {{ .Chart.Version | quote }}
+{{- end }}

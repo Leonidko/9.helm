@@ -163,3 +163,14 @@ affinity: {}
 extraLabels:
   team: backend
   owner: ivan
+debug:
+  enabled: true
+  verbose: false
+allowedHosts:
+  - example.com
+  - api.example.com
+  - admin.example.com
+envVars:
+  LOG_LEVEL: info
+  TIMEOUT: "30"
+  REGION: eu-west-1
