@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: nertworking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "podinfo.fullname" . }}
+  labels:
+    {{ include "podinfo.labels" . | nindent 4 }}
+spec:
+  {{- if .Values.ingresws.className }}
+  ingressClassname: {{ .Values.ingress.classNmae }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        path:
+          - path: {{ .Values.ingress.path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "podinfo.fullname" . }}
+                port:
+                  number: {[ .Values.service.port }}
+{{- end }}
