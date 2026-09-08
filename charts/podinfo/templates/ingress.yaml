@@ -1,12 +1,12 @@
 {{- if .Values.ingress.enabled }}
-apiVersion: nertworking.k8s.io/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ include "podinfo.fullname" . }}
   labels:
     {{ include "podinfo.labels" . | nindent 4 }}
 spec:
-  {{- if .Values.ingresws.className }}
+  {{- if .Values.ingress.className }}
   ingressClassname: {{ .Values.ingress.classNmae }}
   {{- end }}
   rules:
@@ -19,5 +19,5 @@ spec:
               service:
                 name: {{ include "podinfo.fullname" . }}
                 port:
-                  number: {[ .Values.service.port }}
+                  number: {{ .Values.service.port }}
 {{- end }}

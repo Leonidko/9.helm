@@ -25,6 +25,6 @@ resourses:
 
 podinfo:
   level: info
-  massage: "Hello from my Helm chart!"
+  message: "Hello from my Helm chart!"
   ui:
     color: "#34577c"
