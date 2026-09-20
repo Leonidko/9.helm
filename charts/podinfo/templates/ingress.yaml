@@ -12,8 +12,8 @@ spec:
   rules:
     - host: {{ .Values.ingress.host }}
       http:
-        path:
-          - path: {{ .Values.ingress.path }}
+        paths:
+          - path: {{ .Values.ingress.paths }}
             pathType: Prefix
             backend:
               service:

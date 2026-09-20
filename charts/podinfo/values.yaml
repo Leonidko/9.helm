@@ -1,5 +1,6 @@
 replicaCount: 1
-
+auth:
+  password:
 image:
   repository: ghcr.io/stefanprodan/podinfo
   tag: ""
@@ -13,7 +14,7 @@ ingress:
   enabled: false
   className: ""
   host: podinfo.local
-  path: /
+  paths: /
 
 resourses:
   limit:
