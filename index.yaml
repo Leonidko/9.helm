@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  podinfo:
+  - apiVersion: v2
+    appVersion: 6.5.0
+    created: "2026-10-02T11:25:11.700689973Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://mirror.yandex.ru/helm/charts.bitnami.com
+      version: 15.x.x
+    description: Microservice demo app with PostgreSQL
+    digest: d3a6d63e53b7d1d399ebc780b307ede69a372b3542836809cd5088ff4784a5e9
+    name: podinfo
+    type: application
+    urls:
+    - https://Leonidk0.github.io/9.helm/docs/podinfo-0.2.0.tgz
+    version: 0.2.0
+generated: "2026-10-02T11:25:11.687361478Z"

@@ -29,3 +29,17 @@ podinfo:
   message: "Hello from my Helm chart!"
   ui:
     color: "#34577c"
+
+postgresql:
+  enabled: true
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+    tag: 16.4.0-debian-12-r14
+  auth:
+    username: podinfo
+    password: changeme
+    database: podinfo
+  primary:
+    persistence:
+      enabled: false      # для теста, в проде true

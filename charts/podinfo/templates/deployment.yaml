@@ -18,6 +18,18 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: PODINFO_DB_HOST
+              value: {{ .Release.Name }}-postgresql
+            - name: PODINFO_DB_USER
+              value: {{ .Values.postgresql.auth.username }}
+            - name: PODINFO_DB_NAME
+              value: {{ .Values.postgresql.auth.database }}
+            - name: PODINFO_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-postgresql
+                  key: password
           ports:
             - name: http
               containerPort: 9898
