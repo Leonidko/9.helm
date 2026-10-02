@@ -14,6 +14,6 @@ entries:
     name: podinfo
     type: application
     urls:
-    - https://Leonidko.gitlub.io/9.helm/podinfo-0.2.0.tgz
+    - https://Leonidko.github.io/9.helm/podinfo-0.2.0.tgz
     version: 0.2.0
 generated: "2026-10-02T12:36:22.740433858Z"
