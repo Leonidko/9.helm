@@ -3,7 +3,7 @@ entries:
   podinfo:
   - apiVersion: v2
     appVersion: 6.5.0
-    created: "2026-10-02T12:36:22.748634766Z"
+    created: "2026-10-02T14:30:02.225275092Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -16,4 +16,4 @@ entries:
     urls:
     - https://Leonidko.github.io/9.helm/podinfo-0.2.0.tgz
     version: 0.2.0
-generated: "2026-10-02T12:36:22.740433858Z"
+generated: "2026-10-02T14:30:02.219416838Z"
