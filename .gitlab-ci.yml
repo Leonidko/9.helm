@@ -1,0 +1,7 @@
+create-pages:
+  stage: deploy
+  script:
+    - test -f docs/index.yaml
+  pages: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
